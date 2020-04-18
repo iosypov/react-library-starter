@@ -12,7 +12,8 @@
     "test": "jest --watch",
     "test:once": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,7 @@
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/preset-typescript": "^1.2.2",
     "@storybook/react": "^5.3.18",
+    "@storybook/storybook-deployer": "^2.8.5",
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.24",
