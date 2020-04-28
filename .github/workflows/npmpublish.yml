@@ -4,8 +4,8 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [master]
 
 jobs:
   
@@ -21,30 +21,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - name: Setup git
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action":  
-      - name: Get version
-        id: version
-        run: echo ${GITHUB_REF##*/}
-      - run: npm install
-      - name: Update version package.json
-        run: npm version ${GITHUB_REF##*/}
-      - name: Remove tag
-        run: git tag --delete v${GITHUB_REF##*/}
       
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Generate Auto Changelog
-        uses: ahmadawais/action-auto-changelog@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-#       - name: Push changes
-#         uses: ad-m/github-push-action@master
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
-          
-  
+      - run: npm install
+      - name: Deploy Storybook
+        run: npm run deploy-storybook -- --ci --host-token-env-variable=${{ secrets.GITHUB_TOKEN }}
