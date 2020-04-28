@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/iosypov/eact-library-startermain.9d789f39ea3d4efc4d16.bundle.js",
+    "main.js.map": "/iosypov/eact-library-startermain.9d789f39ea3d4efc4d16.bundle.js.map",
+    "runtime~main.js": "/iosypov/eact-library-starterruntime~main.9d789f39ea3d4efc4d16.bundle.js",
+    "runtime~main.js.map": "/iosypov/eact-library-starterruntime~main.9d789f39ea3d4efc4d16.bundle.js.map",
+    "vendors~main.js": "/iosypov/eact-library-startervendors~main.9d789f39ea3d4efc4d16.bundle.js",
+    "vendors~main.js.map": "/iosypov/eact-library-startervendors~main.9d789f39ea3d4efc4d16.bundle.js.map",
+    "iframe.html": "/iosypov/eact-library-starteriframe.html",
+    "precache-manifest.e6ea52be173a864a20bd458f88291f44.js": "/iosypov/eact-library-starterprecache-manifest.e6ea52be173a864a20bd458f88291f44.js",
+    "service-worker.js": "/iosypov/eact-library-starterservice-worker.js",
+    "vendors~main.9d789f39ea3d4efc4d16.bundle.js.LICENSE.txt": "/iosypov/eact-library-startervendors~main.9d789f39ea3d4efc4d16.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.9d789f39ea3d4efc4d16.bundle.js",
+    "vendors~main.9d789f39ea3d4efc4d16.bundle.js",
+    "main.9d789f39ea3d4efc4d16.bundle.js"
+  ]
+}
