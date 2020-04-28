@@ -26,4 +26,4 @@ jobs:
       - name: Deploy Storybook
         run: npm run deploy-storybook -- --ci
         env:
-          GH_TOKEN: iosypov:${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${ GITHUB_ACTOR }:${{ secrets.GITHUB_TOKEN }}
