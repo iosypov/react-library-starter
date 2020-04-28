@@ -20,7 +20,7 @@ jobs:
       - run: echo ${GITHUB_REF##*/}
       - run: npm install
       - name: New version
-        run: npm version ${GITHUB_REF}
+        run: npm version ${GITHUB_REF##*/}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
