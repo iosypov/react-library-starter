@@ -17,13 +17,24 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: echo ${GITHUB_REF##*/}
+      - name: Setup git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action":  
+      - name: Get version
+        id: version
+        run: echo ${GITHUB_REF##*/}
       - run: npm install
-      - name: New version
-        run: npm version ${GITHUB_REF##*/}
+      - name: Update version package.json
+        run: npm version ${{steps.version.outputs.version}}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: vemel/update-changelog@0.0.1
+        id: changelog
+        with:
+          version: ${{ steps.version.outputs.version }}
+      - run: git status
           
           
   
