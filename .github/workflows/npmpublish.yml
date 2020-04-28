@@ -34,12 +34,14 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Conventional Changelog Action
-        uses: TriPSs/conventional-changelog-action@v2.0.1
+      - name: Generate Auto Changelog
+        uses: ahmadawais/action-auto-changelog@master
         with:
-          github-token: ${{ secrets.github_token }}
-          tag-prefix: ""
-      - run: git status
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
           
           
   
