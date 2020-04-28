@@ -30,7 +30,7 @@ jobs:
         run: echo ${GITHUB_REF##*/}
       - run: npm install
       - name: Update version package.json
-        run: npm version ${{steps.version.outputs.version}}
+        run: npm version ${GITHUB_REF##*/}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
